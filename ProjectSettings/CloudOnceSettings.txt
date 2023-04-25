@@ -1,0 +1,23 @@
+{
+	"AchievementIDs":[],
+	"LeaderboardIDs":[
+		{
+			"InternalID":"devSkrimp",
+			"AppleID":"devSkrimp",
+			"GoogleID":"CgkI9rfxvucSEAIQAQ"
+		},
+		{
+			"InternalID":"playerLevel",
+			"AppleID":"playerLevel",
+			"GoogleID":"CgkI9rfxvucSEAIQAg"
+		}
+	],
+	"CloudVariables":[],
+	"AppleSupported":true,
+	"GoogleSupported":true,
+	"GoogleAppID":"646256024566",
+	"GoogleSetupRun":true,
+	"DebugModeEnabled":false,
+	"Version":"2.7.5",
+	"SettingsLocation":"0"
+}

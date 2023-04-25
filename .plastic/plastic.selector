@@ -1,0 +1,4 @@
+repository "Project Skrimp@BlindsidedGames@cloud"
+  path "/"
+    br "/main"
+    co "/main"
