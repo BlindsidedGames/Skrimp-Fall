@@ -16,8 +16,8 @@ public class LevelCompleteManager : MonoBehaviour
 
     private void Update()
     {
-        levelText.text = $"Level: {(int)oracle.saveData.levelSelector + 1}";
+        levelText.text = $"Stage: {(int)oracle.saveData.levelSelector + 1}";
         text.text =
-            $"Time spent in level: {CalcUtils.FormatTimeLarge(stats.timeSpentInLevel)} <br>Skrimp captured: {stats.timesSkrimpGoneThroughPortal:N0} <br>Skrimp wasted: {stats.timesSkrimpHitGround:N0} <br>Dev Skrimp: {level.devSkrimp}";
+            $"Time spent in Stage: {CalcUtils.FormatTimeLarge(stats.timeSpentInLevel)} <br>Skrimp captured: {stats.timesSkrimpGoneThroughPortal:N0} <br>Skrimp wasted: {stats.timesSkrimpHitGround:N0} <br>Dev Skrimp: {level.devSkrimp}";
     }
 }

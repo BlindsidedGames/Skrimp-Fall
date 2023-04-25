@@ -133,33 +133,33 @@ public class SkrimpInterface : MonoBehaviour
 
         finishLevelText.text =
             levelComplete && !sd.level.levelComplete && oracle.levelConditions.ContainsKey(sd.levelSelector + 1)
-                ? "Next Level!"
+                ? "Next Stage!"
                 : "Main Menu";
 
         var upgradeAvailable = currency >= nextGravityCost || currency >= nextPortalCost || currency >= nextValueCost ||
                                currency >= nextCountCost;
         panelExpander.color = upgradeAvailable ? upgradeAvailableColor : Color.white;
         menuIndicatorText.text = levelComplete
-            ? "Level Complete!"
+            ? "Stage Complete!"
             : $"Goal: {CalcUtils.FormatNumber(lvlConditions.scoreToAdvance)}";
 
 
         currencyText.text = CalcUtils.FormatNumber(currency);
 
-        gravityButton.interactable = currency >= nextGravityCost;
+        gravityButton.interactable = currency >= nextGravityCost && !(level.gravity >= 1.79);
         portalButton.interactable = currency >= nextPortalCost && !(level.portalSize >= 4.1);
         valueButton.interactable = currency >= nextValueCost;
         countButton.interactable = currency >= nextCountCost;
 
-        gravityFillBar.fillAmount = (float)(currency / nextGravityCost);
+        gravityFillBar.fillAmount = level.gravity >= 1.79 ? 1 : (float)(currency / nextGravityCost);
         portalFillBar.fillAmount = level.portalSize >= 4.1 ? 1 : (float)(currency / nextPortalCost);
         valueFillBar.fillAmount = (float)(currency / nextValueCost);
         countFillBar.fillAmount = (float)(currency / nextCountCost);
 
-        gravityCost.text = $"Cost: {CalcUtils.FormatNumber(nextGravityCost)}";
+        var maxText = "Max";
+        gravityCost.text = $"Cost: {(level.gravity >= 1.79 ? maxText : CalcUtils.FormatNumber(nextGravityCost))}";
         gravityAmount.text = $"Current Gravity: {level.gravity:F2}";
         gravityPerLevel.text = $"Adds: {CalcUtils.FormatNumber(oracle.data.gravityIncreasePerLevel)}";
-        var maxText = "Max";
         portalCost.text = $"Cost: {(level.portalSize >= 4.1 ? maxText : CalcUtils.FormatNumber(nextPortalCost))}";
         portalAmount.text = $"Current Portal Size: {level.portalSize:F2}";
         portalPerLevel.text = $"Adds: {CalcUtils.FormatNumber(oracle.data.portalIncreasePerLevel)}";
