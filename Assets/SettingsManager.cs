@@ -20,7 +20,7 @@ public class SettingsManager : MonoBehaviour
 
     [SerializeField] private Button accountSettings;
     [SerializeField] private GameObject accountSettingsGO;
-
+    [SerializeField] private Toggle gyroControlSetting;
 
     private void Start()
     {
@@ -36,6 +36,8 @@ public class SettingsManager : MonoBehaviour
         setBlack.onClick.AddListener(() => oracle.saveData.preferences.cameraColorPrefs = CameraColor.Black);
         setBlue.onClick.AddListener(() => oracle.saveData.preferences.cameraColorPrefs = CameraColor.Blue);
 
+        gyroControlSetting.onValueChanged.AddListener(arg0 => oracle.saveData.preferences.gyroEnabled = gyroControlSetting.isOn);
+        
         switch (oracle.saveData.preferences.cameraColorPrefs)
         {
             case CameraColor.Blue:
@@ -45,6 +47,7 @@ public class SettingsManager : MonoBehaviour
                 setBlue.gameObject.SetActive(true);
                 break;
         }
+        gyroControlSetting.SetIsOnWithoutNotify(oracle.saveData.preferences.gyroEnabled);
     }
 
 
