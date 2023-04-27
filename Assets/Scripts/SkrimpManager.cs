@@ -20,17 +20,16 @@ public class SkrimpManager : MonoBehaviour
     [SerializeField] private GameObject catSkin;
 
 
-    Rigidbody2D rb;
-    [SerializeField]
-    float dirX;
-    [SerializeField]
-    float moveSpeed = 0.2f;
+    private Rigidbody2D rb;
+    [SerializeField] private float dirX;
+    [SerializeField] private float moveSpeed = 0.2f;
 
     private bool gyroEnabled;
+
     private void Start()
     {
         gyroEnabled = oracle.saveData.preferences.gyroEnabled;
-        rb = GetComponent<Rigidbody2D> ();
+        rb = GetComponent<Rigidbody2D>();
         UpdateSkrimpStats();
         if (devSkrimp)
         {
@@ -43,13 +42,9 @@ public class SkrimpManager : MonoBehaviour
         }
     }
 
-    void Update () {
-        if (gyroEnabled)
-        {
-            var speed = 0.2f;
-            dirX = Input.acceleration.x * speed; 
-        }
-
+    private void Update()
+    {
+        if (gyroEnabled) dirX = Input.acceleration.x * moveSpeed;
     }
 
     private void FixedUpdate()
@@ -60,7 +55,6 @@ public class SkrimpManager : MonoBehaviour
             vel.x += dirX;
             rb.velocity = vel;
         }
-
     }
 
     private void SelectSkin()

@@ -72,6 +72,18 @@ public class LevelLoader : MonoBehaviour
             case LevelSelector.Level17:
                 level = "Level17";
                 break;
+            case LevelSelector.Level18:
+                level = "Level18";
+                break;
+            case LevelSelector.Level19:
+                level = "Level19";
+                break;
+            case LevelSelector.Level20:
+                level = "Level20";
+                break;
+            case LevelSelector.Level21:
+                level = "Level21";
+                break;
             default:
                 oracle.saveData.levelSelector = LevelSelector.Level1;
                 goto case LevelSelector.Level1;

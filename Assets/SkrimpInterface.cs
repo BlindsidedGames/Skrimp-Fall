@@ -70,6 +70,7 @@ public class SkrimpInterface : MonoBehaviour
         portalLock.onValueChanged.AddListener(SetPortalLock);
 
         Camera.main.backgroundColor = sd.preferences.cameraColorPrefs == CameraColor.Black ? Color.black : cameraColor;
+        if (level.gravity > 1.8f) level.gravity = 1.8f;
 
         GetCosts();
     }
