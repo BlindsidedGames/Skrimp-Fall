@@ -298,6 +298,7 @@ public class Oracle : SerializedMonoBehaviour
         public bool rainSkinOwned;
         public bool avoSkinOwned;
         public bool catSkinOwned;
+        public bool gyroEnabled;
     }
 
     #endregion
