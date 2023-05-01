@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123848b8f36d3c94388eb75bc5a5bae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moverButton: {fileID: 2078176269615186412}
+  objectsToFade: []
   portal: {fileID: 2942653875305705799}
   portalLock: {fileID: 3636461025822500444}
   cameraColor: {r: 0.09803922, g: 0.3529412, b: 0.7254902, a: 1}
@@ -1006,6 +1008,17 @@ MonoBehaviour:
 --- !u!114 &2012735992150505122 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 363931237979258750, guid: 80f5a4e5e6d9e234b9e71ad92927fe29, type: 3}
+  m_PrefabInstance: {fileID: 2225443630585072092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2078176269615186412 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 159164747435116592, guid: 80f5a4e5e6d9e234b9e71ad92927fe29, type: 3}
   m_PrefabInstance: {fileID: 2225443630585072092}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

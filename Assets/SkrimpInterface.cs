@@ -11,7 +11,11 @@ using static Oracle;
 
 public class SkrimpInterface : MonoBehaviour
 {
-    [SerializeField] private Transform portal;
+    [SerializeField] private Button moverButton;
+    [SerializeField] private GameObject[] objectsToFade;
+    [SerializeField] private GameObject[] objectsToFadeIn;
+
+    [Space(10)] [SerializeField] private Transform portal;
     [SerializeField] private Toggle portalLock;
     [SerializeField] private Color cameraColor;
 
@@ -59,6 +63,8 @@ public class SkrimpInterface : MonoBehaviour
 
     private void Start()
     {
+        moverButton.onClick.AddListener(FadeObjects);
+
         gravityButton.onClick.AddListener(PurchaseGravity);
         portalButton.onClick.AddListener(PurchasePortal);
         valueButton.onClick.AddListener(PurchaseValue);
@@ -74,6 +80,22 @@ public class SkrimpInterface : MonoBehaviour
 
         GetCosts();
     }
+
+    private void FadeObjects()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Fade());
+    }
+
+    private IEnumerator Fade()
+    {
+        foreach (var obj in objectsToFade) obj.SetActive(false);
+        foreach (var obj in objectsToFadeIn) obj.SetActive(true);
+        yield return new WaitForSeconds(1);
+        foreach (var obj in objectsToFade) obj.SetActive(true);
+        foreach (var obj in objectsToFadeIn) obj.SetActive(false);
+    }
+
 
     private void SetPortalLock(bool locked)
     {
