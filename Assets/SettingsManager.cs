@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Services.CloudSave;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,8 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private GameObject accountSettingsGO;
     [SerializeField] private Toggle gyroControlSetting;
 
+    [SerializeField] private TMP_Dropdown skrimpCountDropdown;
+
     private void Start()
     {
         save1.onClick.AddListener(() => oracle.SaveSomeData("Slot_1"));
@@ -36,8 +39,9 @@ public class SettingsManager : MonoBehaviour
         setBlack.onClick.AddListener(() => oracle.saveData.preferences.cameraColorPrefs = CameraColor.Black);
         setBlue.onClick.AddListener(() => oracle.saveData.preferences.cameraColorPrefs = CameraColor.Blue);
 
-        gyroControlSetting.onValueChanged.AddListener(arg0 => oracle.saveData.preferences.gyroEnabled = gyroControlSetting.isOn);
-        
+        gyroControlSetting.onValueChanged.AddListener(arg0 =>
+            oracle.saveData.preferences.gyroEnabled = gyroControlSetting.isOn);
+
         switch (oracle.saveData.preferences.cameraColorPrefs)
         {
             case CameraColor.Blue:
@@ -47,7 +51,11 @@ public class SettingsManager : MonoBehaviour
                 setBlue.gameObject.SetActive(true);
                 break;
         }
+
         gyroControlSetting.SetIsOnWithoutNotify(oracle.saveData.preferences.gyroEnabled);
+        skrimpCountDropdown.value = (int)oracle.saveData.preferences.skrimpOnScreen;
+        skrimpCountDropdown.onValueChanged.AddListener(i =>
+            oracle.saveData.preferences.skrimpOnScreen = (SkrimpOnScreen)i);
     }
 
 

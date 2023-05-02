@@ -25,7 +25,8 @@ public class SkrimpHitThingMovePortal : MonoBehaviour
         {
             audioSource.PlayOneShot(defaultAudioClips[Random.Range(0, defaultAudioClips.Length)]);
             MovetoPortal();
-            level.currency += level.skrimpValue * (1 + oracle.saveData.player.level / 10f);
+            level.currency += level.skrimpValue * (1 + oracle.saveData.player.level / 10f) *
+                              level.valueMultiFromBonusSkrimp;
             oracle.saveData.player.experience += 1 + (int)oracle.saveData.levelSelector;
             oracle.saveData.statistics.timesSkrimpGoneThroughPortal++;
             oracle.saveData.level.levelStats.timesSkrimpGoneThroughPortal++;

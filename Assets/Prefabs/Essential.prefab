@@ -223,8 +223,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moverButton: {fileID: 2078176269615186412}
   objectsToFade: []
+  objectsToFadeIn: []
   portal: {fileID: 2942653875305705799}
   portalLock: {fileID: 3636461025822500444}
+  centerPortal: {fileID: 7583424663774338584}
+  portalMover: {fileID: 6564266394382420752}
   cameraColor: {r: 0.09803922, g: 0.3529412, b: 0.7254902, a: 1}
   gravityButton: {fileID: 9094139080043182191}
   portalButton: {fileID: 4274628788658397523}
@@ -335,6 +338,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4100769975069071215, guid: 9d5dcd0745fe67d42ab4a9495adf2924, type: 3}
   m_PrefabInstance: {fileID: 1170571462576285224}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6564266394382420752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5415087116036304184, guid: 9d5dcd0745fe67d42ab4a9495adf2924, type: 3}
+  m_PrefabInstance: {fileID: 1170571462576285224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e9e23c88e8a404fa0676700860f533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7676912990051320406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8842654297407022206, guid: 9d5dcd0745fe67d42ab4a9495adf2924, type: 3}
@@ -1228,6 +1242,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7583424663774338584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8637870814292170692, guid: 80f5a4e5e6d9e234b9e71ad92927fe29, type: 3}
+  m_PrefabInstance: {fileID: 2225443630585072092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7627629919702428814 stripped

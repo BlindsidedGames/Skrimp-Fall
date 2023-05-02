@@ -268,6 +268,7 @@ public class Oracle : SerializedMonoBehaviour
 
         public double skrimpValue = 1;
         public int skrimpValueUpgrades;
+        public float valueMultiFromBonusSkrimp = 1;
 
         public int skrimpCount = 1;
         public int skrimpCountUpgrades;
@@ -295,6 +296,7 @@ public class Oracle : SerializedMonoBehaviour
         public Tab menuTabs = Tab.Tab1;
         public SkinSelection skinSelection = SkinSelection.Skrimp;
         public CameraColor cameraColorPrefs = CameraColor.Blue;
+        public SkrimpOnScreen skrimpOnScreen = SkrimpOnScreen.Fifty;
         public bool rainSkinOwned;
         public bool avoSkinOwned;
         public bool catSkinOwned;
@@ -343,6 +345,13 @@ public class Oracle : SerializedMonoBehaviour
         Level28,
         Level29,
         Level30
+    }
+
+    public enum SkrimpOnScreen
+    {
+        Fifty,
+        OneHundred,
+        Unlimited
     }
 
     public enum SkinSelection

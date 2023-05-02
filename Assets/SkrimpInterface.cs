@@ -17,6 +17,8 @@ public class SkrimpInterface : MonoBehaviour
 
     [Space(10)] [SerializeField] private Transform portal;
     [SerializeField] private Toggle portalLock;
+    [SerializeField] private Button centerPortal;
+    [SerializeField] private PortalMover portalMover;
     [SerializeField] private Color cameraColor;
 
     [Space(10)] [SerializeField] private Button gravityButton;
@@ -64,6 +66,7 @@ public class SkrimpInterface : MonoBehaviour
     private void Start()
     {
         moverButton.onClick.AddListener(FadeObjects);
+        centerPortal.onClick.AddListener(portalMover.SetPortalToCenter);
 
         gravityButton.onClick.AddListener(PurchaseGravity);
         portalButton.onClick.AddListener(PurchasePortal);
@@ -170,12 +173,12 @@ public class SkrimpInterface : MonoBehaviour
         currencyText.text = CalcUtils.FormatNumber(currency);
 
         gravityButton.interactable = currency >= nextGravityCost && !(level.gravity >= 1.79);
-        portalButton.interactable = currency >= nextPortalCost && !(level.portalSize >= 4.1);
+        portalButton.interactable = currency >= nextPortalCost && !(level.portalSize >= 4.9);
         valueButton.interactable = currency >= nextValueCost;
         countButton.interactable = currency >= nextCountCost;
 
         gravityFillBar.fillAmount = level.gravity >= 1.79 ? 1 : (float)(currency / nextGravityCost);
-        portalFillBar.fillAmount = level.portalSize >= 4.1 ? 1 : (float)(currency / nextPortalCost);
+        portalFillBar.fillAmount = level.portalSize >= 4.9 ? 1 : (float)(currency / nextPortalCost);
         valueFillBar.fillAmount = (float)(currency / nextValueCost);
         countFillBar.fillAmount = (float)(currency / nextCountCost);
 
@@ -183,14 +186,15 @@ public class SkrimpInterface : MonoBehaviour
         gravityCost.text = $"Cost: {(level.gravity >= 1.79 ? maxText : CalcUtils.FormatNumber(nextGravityCost))}";
         gravityAmount.text = $"Current Gravity: {level.gravity:F2}";
         gravityPerLevel.text = $"Adds: {CalcUtils.FormatNumber(oracle.data.gravityIncreasePerLevel)}";
-        portalCost.text = $"Cost: {(level.portalSize >= 4.1 ? maxText : CalcUtils.FormatNumber(nextPortalCost))}";
+        portalCost.text = $"Cost: {(level.portalSize >= 4.9 ? maxText : CalcUtils.FormatNumber(nextPortalCost))}";
         portalAmount.text = $"Current Portal Size: {level.portalSize:F2}";
         portalPerLevel.text = $"Adds: {CalcUtils.FormatNumber(oracle.data.portalIncreasePerLevel)}";
 
         valueCost.text = $"Cost: {CalcUtils.FormatNumber(nextValueCost)}";
-        valueAmount.text = $"Current Value: {level.skrimpValue * (1 + oracle.saveData.player.level / 10f):F2}";
+        valueAmount.text =
+            $"Current Value: {level.skrimpValue * (1 + oracle.saveData.player.level / 10f) * level.valueMultiFromBonusSkrimp:F2}";
         valuePerLevel.text =
-            $"Adds: {CalcUtils.FormatNumber(oracle.data.valueIncreasePerLevel * (1 + oracle.saveData.player.level / 10f))}";
+            $"Adds: {CalcUtils.FormatNumber(oracle.data.valueIncreasePerLevel * (1 + oracle.saveData.player.level / 10f) * level.valueMultiFromBonusSkrimp)}";
 
         countCost.text = $"Cost: {CalcUtils.FormatNumber(nextCountCost)}";
         countAmount.text =
@@ -227,7 +231,7 @@ public class SkrimpInterface : MonoBehaviour
 
     private void PurchasePortal()
     {
-        if (level.portalSize >= 4.1) return;
+        if (level.portalSize >= 4.9) return;
         level.portalSize += oracle.data.portalIncreasePerLevel;
         level.portalSizeUpgrades++;
         level.currency -= nextPortalCost;

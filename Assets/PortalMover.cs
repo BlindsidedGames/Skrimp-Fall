@@ -146,6 +146,14 @@ public class PortalMover : MonoBehaviour
         if (!oracle.saveData.level.portalLocked) MovePortal();
     }
 
+    public void SetPortalToCenter()
+    {
+        var transform1 = transform;
+        var position = transform1.position;
+        position.x = 0;
+        transform1.position = position;
+    }
+
     private void MovePortal()
     {
         var position = transform.position;
