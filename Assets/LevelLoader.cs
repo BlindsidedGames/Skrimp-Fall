@@ -1,15 +1,13 @@
 using System;
-using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Utilities;
 using static Oracle;
 
 public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private Button btn;
+    private Preferences prefs => oracle.saveData.preferences;
 
     private void Start()
     {
@@ -84,11 +82,21 @@ public class LevelLoader : MonoBehaviour
             case LevelSelector.Level21:
                 level = "Level21";
                 break;
+            case LevelSelector.Level22:
+                level = "Level22";
+                break;
+            case LevelSelector.Level23:
+                level = "Level23";
+                break;
+            case LevelSelector.Level24:
+                level = "Level24";
+                break;
             default:
                 oracle.saveData.levelSelector = LevelSelector.Level1;
                 goto case LevelSelector.Level1;
         }
 
+        prefs.inGame = true;
         oracle.saveData.level = oracle.saveData.savedLevels[oracle.saveData.levelSelector];
         SkrimpManager.skrimCount = 0;
         SkrimpManager.devSkrimpCount = 0;

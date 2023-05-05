@@ -10,6 +10,11 @@
 			"InternalID":"playerLevel",
 			"AppleID":"playerLevel",
 			"GoogleID":"CgkI9rfxvucSEAIQAg"
+		},
+		{
+			"InternalID":"devSkrimpPlus",
+			"AppleID":"devSkrimpPlus",
+			"GoogleID":"CgkI9rfxvucSEAIQAw"
 		}
 	],
 	"CloudVariables":[],

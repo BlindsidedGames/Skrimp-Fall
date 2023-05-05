@@ -22,6 +22,7 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private Button accountSettings;
     [SerializeField] private GameObject accountSettingsGO;
     [SerializeField] private Toggle gyroControlSetting;
+    [SerializeField] private Toggle loadSceneOnStart;
 
     [SerializeField] private TMP_Dropdown skrimpCountDropdown;
 
@@ -40,7 +41,9 @@ public class SettingsManager : MonoBehaviour
         setBlue.onClick.AddListener(() => oracle.saveData.preferences.cameraColorPrefs = CameraColor.Blue);
 
         gyroControlSetting.onValueChanged.AddListener(arg0 =>
-            oracle.saveData.preferences.gyroEnabled = gyroControlSetting.isOn);
+            oracle.saveData.preferences.gyroEnabled = arg0);
+        loadSceneOnStart.onValueChanged.AddListener(arg0 =>
+            oracle.saveData.preferences.loadLastLevelOnStart = arg0);
 
         switch (oracle.saveData.preferences.cameraColorPrefs)
         {
@@ -53,6 +56,7 @@ public class SettingsManager : MonoBehaviour
         }
 
         gyroControlSetting.SetIsOnWithoutNotify(oracle.saveData.preferences.gyroEnabled);
+        loadSceneOnStart.SetIsOnWithoutNotify(oracle.saveData.preferences.loadLastLevelOnStart);
         skrimpCountDropdown.value = (int)oracle.saveData.preferences.skrimpOnScreen;
         skrimpCountDropdown.onValueChanged.AddListener(i =>
             oracle.saveData.preferences.skrimpOnScreen = (SkrimpOnScreen)i);

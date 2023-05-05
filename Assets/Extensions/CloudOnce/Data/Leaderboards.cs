@@ -44,6 +44,21 @@ namespace CloudOnce
             get { return s_playerLevel; }
         }
 
+        private static readonly UnifiedLeaderboard s_devSkrimpPlus = new UnifiedLeaderboard("devSkrimpPlus",
+#if !UNITY_EDITOR && (UNITY_IOS || UNITY_TVOS)
+            "devSkrimpPlus"
+#elif !UNITY_EDITOR && UNITY_ANDROID && CLOUDONCE_GOOGLE
+            "CgkI9rfxvucSEAIQAw"
+#else
+            "devSkrimpPlus"
+#endif
+            );
+
+        public static UnifiedLeaderboard devSkrimpPlus
+        {
+            get { return s_devSkrimpPlus; }
+        }
+
         public static string GetPlatformID(string internalId)
         {
             return s_leaderboardDictionary.ContainsKey(internalId)
@@ -55,6 +70,7 @@ namespace CloudOnce
         {
             { "devSkrimp", s_devSkrimp },
             { "playerLevel", s_playerLevel },
+            { "devSkrimpPlus", s_devSkrimpPlus },
         };
     }
 }

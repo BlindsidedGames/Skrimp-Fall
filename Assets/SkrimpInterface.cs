@@ -8,12 +8,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utilities;
 using static Oracle;
+using Random = UnityEngine.Random;
 
 public class SkrimpInterface : MonoBehaviour
 {
     [SerializeField] private Button moverButton;
     [SerializeField] private GameObject[] objectsToFade;
     [SerializeField] private GameObject[] objectsToFadeIn;
+    [SerializeField] private GameObject[] objectsToFadeRandom;
+    [SerializeField] private bool fadeRandom;
 
     [Space(10)] [SerializeField] private Transform portal;
     [SerializeField] private Toggle portalLock;
@@ -86,8 +89,23 @@ public class SkrimpInterface : MonoBehaviour
 
     private void FadeObjects()
     {
-        StopAllCoroutines();
-        StartCoroutine(Fade());
+        if (!fadeRandom)
+        {
+            StopAllCoroutines();
+            StartCoroutine(Fade());
+        }
+        else
+        {
+            StartCoroutine(FadeRandom());
+        }
+    }
+
+    private IEnumerator FadeRandom()
+    {
+        var objectToFade = objectsToFadeRandom[Random.Range(0, objectsToFadeRandom.Length)];
+        objectToFade.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        objectToFade.SetActive(true);
     }
 
     private IEnumerator Fade()
@@ -145,6 +163,7 @@ public class SkrimpInterface : MonoBehaviour
     public void LoadMenu()
     {
         oracle.Save();
+        oracle.saveData.preferences.inGame = false;
         SceneManager.LoadScene(0);
     }
 

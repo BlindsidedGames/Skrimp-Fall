@@ -252,6 +252,8 @@ public class Oracle : SerializedMonoBehaviour
         public double currency;
         public int devSkrimp;
 
+        public float devSkrimpCooldown = 30;
+
         public float portalLocation;
         public bool portalLocked;
         public bool statsExpanded;
@@ -300,7 +302,10 @@ public class Oracle : SerializedMonoBehaviour
         public bool rainSkinOwned;
         public bool avoSkinOwned;
         public bool catSkinOwned;
+        public bool removeAds;
         public bool gyroEnabled;
+        public bool loadLastLevelOnStart;
+        public bool inGame;
     }
 
     #endregion

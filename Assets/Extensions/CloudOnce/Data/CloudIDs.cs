@@ -66,6 +66,26 @@ namespace CloudOnce
 #endif
                 }
             }
+
+            public static string devSkrimpPlus
+            {
+                get
+                {
+#if UNITY_ANDROID && !UNITY_EDITOR
+#if CLOUDONCE_GOOGLE
+                    return "CgkI9rfxvucSEAIQAw";
+#else
+                    return string.Empty;
+#endif
+#elif (UNITY_IOS || UNITY_TVOS) && !UNITY_EDITOR
+                    return "devSkrimpPlus";
+#elif UNITY_EDITOR
+                    return "devSkrimpPlus";
+#else
+                    return string.Empty;
+#endif
+                }
+            }
         }
     }
 }

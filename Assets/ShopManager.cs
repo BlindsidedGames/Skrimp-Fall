@@ -27,6 +27,11 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private Image catBackground;
     [SerializeField] private TMP_Text catSelectorText;
     [SerializeField] private Text catPurchaseText;
+    [Space(10)] [SerializeField] private Button removeAdsSelector;
+    [SerializeField] private Button removeAdsPurchase;
+    [SerializeField] private Image removeAdsBackground;
+    [SerializeField] private TMP_Text removeAdsSelectorText;
+    [SerializeField] private Text removeAdsPurchaseText;
 
     private Preferences prefs => oracle.saveData.preferences;
 
@@ -60,6 +65,12 @@ public class ShopManager : MonoBehaviour
         catSelectorText.text = prefs.catSkinOwned
             ? prefs.skinSelection == SkinSelection.Cat ? "Selected" : ""
             : catPurchaseText.text;
+
+        removeAdsPurchase.gameObject.SetActive(!prefs.removeAds);
+        removeAdsBackground.color = prefs.removeAds ? OwnedColor : UnOwnedColor;
+        removeAdsSelectorText.text = prefs.removeAds
+            ? "Owned"
+            : removeAdsPurchaseText.text;
     }
 
 
@@ -99,5 +110,11 @@ public class ShopManager : MonoBehaviour
     {
         prefs.catSkinOwned = true;
         prefs.skinSelection = SkinSelection.Cat;
+    }
+
+    public void PurchaseRemoveAds()
+    {
+        prefs.removeAds = true;
+        oracle.saveData.level.devSkrimpCooldown = 30;
     }
 }
