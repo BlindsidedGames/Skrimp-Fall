@@ -306,6 +306,8 @@ public class Oracle : SerializedMonoBehaviour
         public bool gyroEnabled;
         public bool loadLastLevelOnStart;
         public bool inGame;
+
+        public bool fixedBug;
     }
 
     #endregion
@@ -356,7 +358,8 @@ public class Oracle : SerializedMonoBehaviour
     {
         Fifty,
         OneHundred,
-        Unlimited
+        Unlimited,
+        MegaSkrimp
     }
 
     public enum SkinSelection

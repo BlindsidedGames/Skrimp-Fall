@@ -16,7 +16,10 @@ public class SkrimpInterface : MonoBehaviour
     [SerializeField] private GameObject[] objectsToFade;
     [SerializeField] private GameObject[] objectsToFadeIn;
     [SerializeField] private GameObject[] objectsToFadeRandom;
+    [SerializeField] private GameObject[] objectsToFadeRandom2;
     [SerializeField] private bool fadeRandom;
+    [SerializeField] private float fadeRandomTimer = 0.5f;
+    [SerializeField] private bool alwaysFadeRandom;
 
     [Space(10)] [SerializeField] private Transform portal;
     [SerializeField] private Toggle portalLock;
@@ -85,6 +88,7 @@ public class SkrimpInterface : MonoBehaviour
         if (level.gravity > 1.8f) level.gravity = 1.8f;
 
         GetCosts();
+        if (alwaysFadeRandom) StartCoroutine(FadeRandom());
     }
 
     private void FadeObjects()
@@ -96,16 +100,25 @@ public class SkrimpInterface : MonoBehaviour
         }
         else
         {
-            StartCoroutine(FadeRandom());
+            if (!alwaysFadeRandom) StartCoroutine(FadeRandom());
         }
     }
 
     private IEnumerator FadeRandom()
     {
+        var objectToFade2 = objectsToFadeRandom2.Length > 0
+            ? objectsToFadeRandom2[Random.Range(0, objectsToFadeRandom2.Length)]
+            : null;
+        if (objectToFade2 != null) objectToFade2.SetActive(!objectToFade2.activeSelf);
+
+
         var objectToFade = objectsToFadeRandom[Random.Range(0, objectsToFadeRandom.Length)];
-        objectToFade.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
-        objectToFade.SetActive(true);
+        objectToFade.SetActive(!objectToFade.activeSelf);
+        yield return new WaitForSeconds(fadeRandomTimer);
+        if (objectToFade2 != null) objectToFade2.SetActive(!objectToFade2.activeSelf);
+
+        objectToFade.SetActive(!objectToFade.activeSelf);
+        if (alwaysFadeRandom) StartCoroutine(FadeRandom());
     }
 
     private IEnumerator Fade()

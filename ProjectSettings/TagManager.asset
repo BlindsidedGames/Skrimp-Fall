@@ -7,6 +7,16 @@ TagManager:
   - Floor
   - Portal
   - GroundPortal
+  - x2
+  - x5
+  - x10
+  - x25
+  - x50
+  - x1.5
+  - x3
+  - div2
+  - div4
+  - div10
   layers:
   - Default
   - TransparentFX

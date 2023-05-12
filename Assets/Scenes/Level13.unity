@@ -1584,6 +1584,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 40
+  randomRotation: 0
+  randomMinMax: {x: 0, y: 0}
+  reverse: 1
 --- !u!4 &985050193
 Transform:
   m_ObjectHideFlags: 0
@@ -2219,6 +2222,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 40
+  randomRotation: 0
+  randomMinMax: {x: 0, y: 0}
+  reverse: 1
 --- !u!4 &1609865435
 Transform:
   m_ObjectHideFlags: 0

@@ -2067,6 +2067,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3146464622397929929, guid: 30e537e35ccea014b94d5c2facc79bc9, type: 3}
+      propertyPath: fadeRandomTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146464622397929929, guid: 30e537e35ccea014b94d5c2facc79bc9, type: 3}
+      propertyPath: alwaysFadeRandom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146464622397929929, guid: 30e537e35ccea014b94d5c2facc79bc9, type: 3}
       propertyPath: objectsToFadeRandom.Array.size
       value: 10
       objectReference: {fileID: 0}

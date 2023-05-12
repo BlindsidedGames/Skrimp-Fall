@@ -25,7 +25,7 @@ public class PatreonNameSetter : MonoBehaviour
 
     private void OpenDiscord()
     {
-        Application.OpenURL("https://discord.gg/blindsided-games-712304553931833385");
+        Application.OpenURL("https://discord.com/invite/dKaEy6MFCP");
     }
 
     private void OnEnable()

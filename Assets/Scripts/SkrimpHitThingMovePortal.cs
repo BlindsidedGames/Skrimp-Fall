@@ -15,22 +15,61 @@ public class SkrimpHitThingMovePortal : MonoBehaviour
     [SerializeField] private AudioClip[] defaultAudioClips;
     [SerializeField] private AudioClip[] splatAudioClips;
 
+    private float _scoreMulti = 1;
+
     private static readonly int Splash = Animator.StringToHash("Splash");
 
     private Level level => skrimpInterface.level;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("GroundPortal"))
+        switch (col.tag)
         {
-            audioSource.PlayOneShot(defaultAudioClips[Random.Range(0, defaultAudioClips.Length)]);
-            MovetoPortal();
-            level.currency += level.skrimpValue * (1 + oracle.saveData.player.level / 10f) *
-                              level.valueMultiFromBonusSkrimp;
-            oracle.saveData.player.experience += 1 + (int)oracle.saveData.levelSelector;
-            oracle.saveData.statistics.timesSkrimpGoneThroughPortal++;
-            oracle.saveData.level.levelStats.timesSkrimpGoneThroughPortal++;
+            case "GroundPortal":
+                audioSource.PlayOneShot(defaultAudioClips[Random.Range(0, defaultAudioClips.Length)]);
+                MovetoPortal();
+                level.currency += level.skrimpValue * (1 + oracle.saveData.player.level / 10f) *
+                                  level.valueMultiFromBonusSkrimp * _scoreMulti;
+                oracle.saveData.player.experience += (1 + (int)oracle.saveData.levelSelector) *
+                                                     level.valueMultiFromBonusSkrimp * _scoreMulti;
+                oracle.saveData.statistics.timesSkrimpGoneThroughPortal++;
+                oracle.saveData.level.levelStats.timesSkrimpGoneThroughPortal++;
+
+                _scoreMulti = 1;
+                break;
+            case "x1.5":
+                _scoreMulti *= 1.5f;
+                break;
+            case "x2":
+                _scoreMulti *= 2;
+                break;
+            case "x3":
+                _scoreMulti *= 3;
+                break;
+            case "x5":
+                _scoreMulti *= 5;
+                break;
+            case "x10":
+                _scoreMulti *= 10;
+                break;
+            case "x25":
+                _scoreMulti *= 25;
+                break;
+            case "x50":
+                _scoreMulti *= 50;
+                break;
+            case "div2":
+                _scoreMulti /= 2;
+                break;
+            case "div4":
+                _scoreMulti /= 4;
+                break;
+            case "div10":
+                _scoreMulti /= 10;
+                break;
         }
+
+        if (_scoreMulti > 50) _scoreMulti = 50;
     }
 
     public void MovetoPortal()
@@ -50,6 +89,7 @@ public class SkrimpHitThingMovePortal : MonoBehaviour
                     rainDrop.GetComponent<Animator>().SetTrigger(Splash);
         if (col.gameObject.CompareTag("Floor"))
         {
+            _scoreMulti = .1f;
             var topPortalPosition = topPortal.position;
             topPortalPosition.x = Random.Range(-2f, 2f);
             topPortal.position = topPortalPosition;

@@ -448,7 +448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1456.33}
+  m_AnchoredPosition: {x: 584.0987, y: -1585.22}
   m_SizeDelta: {x: 1118.1974, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &81240037
@@ -510,7 +510,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 10}
-  m_SizeDelta: {x: 0, y: 200}
+  m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &107828687
 MonoBehaviour:
@@ -1131,7 +1131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1845.87}
+  m_AnchoredPosition: {x: 584.0987, y: -1974.76}
   m_SizeDelta: {x: 1118.1974, y: 83.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175316168
@@ -3909,7 +3909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1633.5249}
+  m_AnchoredPosition: {x: 584.0987, y: -1762.4149}
   m_SizeDelta: {x: 1118.1974, y: 81.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321456925
@@ -4837,7 +4837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1686.6}
+  m_AnchoredPosition: {x: 584.0987, y: -1815.49}
   m_SizeDelta: {x: 1118.1974, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395557286
@@ -5500,7 +5500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1739.1}
+  m_AnchoredPosition: {x: 584.0987, y: -1867.99}
   m_SizeDelta: {x: 1118.1974, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440163622
@@ -5963,7 +5963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1403.83}
+  m_AnchoredPosition: {x: 584.0987, y: -1532.72}
   m_SizeDelta: {x: 1118.1974, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458793311
@@ -8551,7 +8551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1510.6}
+  m_AnchoredPosition: {x: 584.0987, y: -1639.49}
   m_SizeDelta: {x: 1118.1974, y: 83.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627184681
@@ -9439,7 +9439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 1.08'
+  m_text: 'Version: 1.10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7376457703ed4524a8bc833ba253f70a, type: 2}
   m_sharedMaterial: {fileID: 6993167963518315104, guid: 7376457703ed4524a8bc833ba253f70a, type: 2}
@@ -13926,7 +13926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1572.66}
+  m_AnchoredPosition: {x: 584.0987, y: -1701.55}
   m_SizeDelta: {x: 1118.1974, y: 40.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117392518
@@ -16210,7 +16210,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 2311.29}
+  m_SizeDelta: {x: 0, y: 2440.18}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1445103605
 MonoBehaviour:
@@ -16616,7 +16616,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 24
+      Data: 26
     - Name: 
       Entry: 7
       Data: 
@@ -17050,6 +17050,42 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 24
+    - Name: $v
+      Entry: 7
+      Data: 26|Oracle+LevelConditions, Assembly-CSharp
+    - Name: scoreToAdvance
+      Entry: 4
+      Data: 250000
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 25
+    - Name: $v
+      Entry: 7
+      Data: 27|Oracle+LevelConditions, Assembly-CSharp
+    - Name: scoreToAdvance
+      Entry: 4
+      Data: 1000000
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -17057,11 +17093,11 @@ MonoBehaviour:
       Data: 
     - Name: savedLevels
       Entry: 7
-      Data: 26|System.Collections.Generic.Dictionary`2[[Oracle+LevelSelector, Assembly-CSharp],[Oracle+Level,
+      Data: 28|System.Collections.Generic.Dictionary`2[[Oracle+LevelSelector, Assembly-CSharp],[Oracle+Level,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 27|System.Collections.Generic.EnumEqualityComparer`1[[Oracle+LevelSelector,
+      Data: 29|System.Collections.Generic.EnumEqualityComparer`1[[Oracle+LevelSelector,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
@@ -17115,6 +17151,7 @@ MonoBehaviour:
       gyroEnabled: 0
       loadLastLevelOnStart: 0
       inGame: 0
+      fixedBug: 0
     levelSelector: 0
     player:
       level: 1
@@ -17707,7 +17744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1791.6}
+  m_AnchoredPosition: {x: 584.0987, y: -1920.49}
   m_SizeDelta: {x: 1118.1974, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535825156
@@ -18585,7 +18622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -2099.465}
+  m_AnchoredPosition: {x: 584.0987, y: -2228.355}
   m_SizeDelta: {x: 1118.1974, y: 423.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613817343
@@ -19039,8 +19076,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 191.99998, y: 245}
-  m_SizeDelta: {x: 250, y: 60}
+  m_AnchoredPosition: {x: 217.68115, y: 245}
+  m_SizeDelta: {x: 301.3623, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631650661
 MonoBehaviour:
@@ -19097,6 +19134,8 @@ MonoBehaviour:
     - m_Text: 100
       m_Image: {fileID: 0}
     - m_Text: Unlimited
+      m_Image: {fileID: 0}
+    - m_Text: MegaSkrimp
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20571,7 +20610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.050980397, g: 0.14901961, b: 0.050980397, a: 1}
+  m_Color: {r: 0.06666667, g: 0.17254902, b: 0.06666667, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21081,7 +21120,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -1351.33}
+  m_AnchoredPosition: {x: 584.0987, y: -1480.22}
   m_SizeDelta: {x: 1118.1974, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759738033
@@ -24520,8 +24559,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 584.0987, y: -694.415}
-  m_SizeDelta: {x: 1118.1974, y: 1288.83}
+  m_AnchoredPosition: {x: 584.0987, y: -758.86}
+  m_SizeDelta: {x: 1118.1974, y: 1417.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2143750164
 MonoBehaviour:
@@ -24546,8 +24585,9 @@ MonoBehaviour:
   m_text: "Watch as skrimp fall from a portal, catch them with your own portal  to
     send them back again and then spend what you earn upgrading your powers!\n\nEach
     Skrimp caught will grant one experience point times the stage you are on for
-    your total level at the bottom. \n\nStage 1 = 1 xp per Skrimp.\nStage 2 = 2 xp
-    per Skrimp. \nSo on and so forth...\n\nEvery level will grant <color=#A3FFFE>10%</color>
+    your total level at the bottom. \n\nMissing a skirmp spoils it, removing all
+    multipliers and making it worth 10% of normal value.\n\nStage 1 = 1 xp per Skrimp.\nStage
+    2 = 2 xp per Skrimp. \nSo on and so forth...\n\nEvery level will grant <color=#A3FFFE>10%</color>
     more currency.\nAdditionally every <color=#A3FFFE>10th</color> level will grant
     <color=#A3FFFE>1</color> additonal <color=#A3FFFE>Skrimp</color>.\n\nAdditionally
     caught Skrimp will increment the counter at the top of the level UI allowing

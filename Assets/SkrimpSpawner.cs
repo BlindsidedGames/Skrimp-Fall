@@ -49,6 +49,9 @@ public class SkrimpSpawner : MonoBehaviour
             case SkrimpOnScreen.Unlimited:
                 totalSkrimpToSpawn = totalSkrimp;
                 break;
+            case SkrimpOnScreen.MegaSkrimp:
+                totalSkrimpToSpawn = 1;
+                break;
             default:
                 goto case SkrimpOnScreen.Fifty;
         }
