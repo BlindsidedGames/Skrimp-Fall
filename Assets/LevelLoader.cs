@@ -16,8 +16,8 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadScene()
     {
-        var level = "";
-        switch (oracle.saveData.levelSelector)
+        var level = oracle.saveData.levelSelector.ToString();
+        /*switch (oracle.saveData.levelSelector)
         {
             case LevelSelector.Level1:
                 level = "Level1";
@@ -100,7 +100,7 @@ public class LevelLoader : MonoBehaviour
             default:
                 oracle.saveData.levelSelector = LevelSelector.Level1;
                 goto case LevelSelector.Level1;
-        }
+        }*/
 
         prefs.inGame = true;
         oracle.saveData.level = oracle.saveData.savedLevels[oracle.saveData.levelSelector];

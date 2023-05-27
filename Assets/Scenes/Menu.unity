@@ -9439,7 +9439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Version: 1.10'
+  m_text: 'Version: 1.11'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7376457703ed4524a8bc833ba253f70a, type: 2}
   m_sharedMaterial: {fileID: 6993167963518315104, guid: 7376457703ed4524a8bc833ba253f70a, type: 2}
@@ -16616,7 +16616,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 26
+      Data: 29
     - Name: 
       Entry: 7
       Data: 
@@ -17086,6 +17086,60 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 26
+    - Name: $v
+      Entry: 7
+      Data: 28|Oracle+LevelConditions, Assembly-CSharp
+    - Name: scoreToAdvance
+      Entry: 4
+      Data: 200000
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 27
+    - Name: $v
+      Entry: 7
+      Data: 29|Oracle+LevelConditions, Assembly-CSharp
+    - Name: scoreToAdvance
+      Entry: 4
+      Data: 250000
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 28
+    - Name: $v
+      Entry: 7
+      Data: 30|Oracle+LevelConditions, Assembly-CSharp
+    - Name: scoreToAdvance
+      Entry: 4
+      Data: 400000
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -17093,11 +17147,11 @@ MonoBehaviour:
       Data: 
     - Name: savedLevels
       Entry: 7
-      Data: 28|System.Collections.Generic.Dictionary`2[[Oracle+LevelSelector, Assembly-CSharp],[Oracle+Level,
+      Data: 31|System.Collections.Generic.Dictionary`2[[Oracle+LevelSelector, Assembly-CSharp],[Oracle+Level,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 29|System.Collections.Generic.EnumEqualityComparer`1[[Oracle+LevelSelector,
+      Data: 32|System.Collections.Generic.EnumEqualityComparer`1[[Oracle+LevelSelector,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
