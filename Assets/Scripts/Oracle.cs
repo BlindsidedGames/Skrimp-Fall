@@ -5,12 +5,12 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using Unity.Services.CloudSave;
 using UnityEngine;
 using UnityEngine.Networking;
-using Sirenix.Serialization;
-using Sirenix.OdinInspector;
 using UnityEngine.SceneManagement;
-using Unity.Services.CloudSave;
 
 public class Oracle : SerializedMonoBehaviour
 {
@@ -299,6 +299,7 @@ public class Oracle : SerializedMonoBehaviour
         public SkinSelection skinSelection = SkinSelection.Skrimp;
         public CameraColor cameraColorPrefs = CameraColor.Blue;
         public SkrimpOnScreen skrimpOnScreen = SkrimpOnScreen.Fifty;
+        public int skrimpOnScreenCount = 50;
         public bool rainSkinOwned;
         public bool avoSkinOwned;
         public bool catSkinOwned;

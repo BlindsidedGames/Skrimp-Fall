@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using Unity.Services.CloudSave;
 using UnityEngine;
@@ -25,6 +23,8 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private Toggle loadSceneOnStart;
 
     [SerializeField] private TMP_Dropdown skrimpCountDropdown;
+    [SerializeField] private Slider skrimpCountSlider;
+    [SerializeField] private TMP_Text skrimpCountText;
 
     private void Start()
     {
@@ -57,9 +57,57 @@ public class SettingsManager : MonoBehaviour
 
         gyroControlSetting.SetIsOnWithoutNotify(oracle.saveData.preferences.gyroEnabled);
         loadSceneOnStart.SetIsOnWithoutNotify(oracle.saveData.preferences.loadLastLevelOnStart);
+
+
         skrimpCountDropdown.value = (int)oracle.saveData.preferences.skrimpOnScreen;
         skrimpCountDropdown.onValueChanged.AddListener(i =>
-            oracle.saveData.preferences.skrimpOnScreen = (SkrimpOnScreen)i);
+        {
+            oracle.saveData.preferences.skrimpOnScreen = (SkrimpOnScreen)i;
+            SetSliderValues();
+        });
+        SetSliderValues();
+        skrimpCountSlider.onValueChanged.AddListener(i =>
+        {
+            oracle.saveData.preferences.skrimpOnScreenCount = (int)i;
+            SetSkrimpCountText();
+        });
+        SetSkrimpCountText();
+        skrimpCountSlider.value = oracle.saveData.preferences.skrimpOnScreenCount;
+        skrimpCountDropdown.value = (int)oracle.saveData.preferences.skrimpOnScreen;
+    }
+
+    private void SetSliderValues()
+    {
+        var numberToSpawn = 50;
+        skrimpCountSlider.interactable = true;
+        switch (oracle.saveData.preferences.skrimpOnScreen)
+        {
+            case SkrimpOnScreen.Fifty:
+                numberToSpawn = 50;
+                break;
+            case SkrimpOnScreen.OneHundred:
+                numberToSpawn = 100;
+                break;
+            case SkrimpOnScreen.Unlimited:
+                numberToSpawn = 2147483647;
+                skrimpCountSlider.interactable = false;
+                break;
+            case SkrimpOnScreen.MegaSkrimp:
+                numberToSpawn = 1;
+                skrimpCountSlider.interactable = false;
+                break;
+            default:
+                goto case SkrimpOnScreen.Fifty;
+        }
+
+        skrimpCountSlider.maxValue = numberToSpawn;
+        skrimpCountSlider.value = numberToSpawn;
+    }
+
+    private void SetSkrimpCountText()
+    {
+        skrimpCountText.text =
+            $"Max Skrimp on screen: {(oracle.saveData.preferences.skrimpOnScreen == SkrimpOnScreen.Unlimited ? "Unlimited" : oracle.saveData.preferences.skrimpOnScreenCount)}";
     }
 
 

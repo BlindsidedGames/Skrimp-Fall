@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using static SkrimpInterface;
@@ -38,13 +36,14 @@ public class SkrimpSpawner : MonoBehaviour
         var devSkrimpOwned = skrimpInterface.level.devSkrimp;
         var totalSkrimp = SkrimpOwned + devSkrimpOwned;
         long totalSkrimpToSpawn = 0;
+        var maxCount = oracle.saveData.preferences.skrimpOnScreenCount;
         switch (oracle.saveData.preferences.skrimpOnScreen)
         {
             case SkrimpOnScreen.Fifty:
-                totalSkrimpToSpawn = totalSkrimp > 50 ? 50 : totalSkrimp;
+                totalSkrimpToSpawn = totalSkrimp > maxCount ? maxCount : totalSkrimp;
                 break;
             case SkrimpOnScreen.OneHundred:
-                totalSkrimpToSpawn = totalSkrimp > 100 ? 100 : totalSkrimp;
+                totalSkrimpToSpawn = totalSkrimp > maxCount ? maxCount : totalSkrimp;
                 break;
             case SkrimpOnScreen.Unlimited:
                 totalSkrimpToSpawn = totalSkrimp;
